@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RuasJauJson.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Ruas de Jaú" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+
+        <Entry x:Name="edtRua" Placeholder="Nome da Rua" />
+        <Button x:Name="btnPesquisar" Text="Pesquisar" Clicked="btnPesquisar_Clicked" />
+
+        <ListView x:Name="lstRuas">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid ColumnDefinitions="2*,3*, 3*">
+                            <Label Text="{Binding cep}" />
+                            <Label Grid.Column="1" Text="{Binding logradouro}" />
+                            <Label Grid.Column="2" Text="{Binding bairro}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
